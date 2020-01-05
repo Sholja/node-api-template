@@ -1,0 +1,71 @@
+{
+  "name": "node-api-template",
+  "description": "Basic API template written in Node.JS",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "ajv": "^6.10.2",
+    "app-module-path": "^2.2.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "klaw-sync": "^6.0.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mysql-import": "^3.0.6",
+    "mysql2": "^2.1.0",
+    "passport-jwt": "^4.0.0",
+    "passport-restify": "^1.0.1",
+    "path": "^0.12.7",
+    "request-promise": "^4.2.5",
+    "restify": "^8.5.1",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-errors": "^8.0.2",
+    "sequelize": "^5.21.3",
+    "sequelize-cli": "^5.5.1",
+    "sha1": "^1.1.1",
+    "util": "^0.12.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-chai-expect": "^2.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.0.1",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development nodemon --exec babel-node src/index.js",
+    "bootstrap": "NODE_ENV=development nodemon --exec babel-node src/bootstrap.js",
+    "build": "babel src --out-dir dist --copy-files",
+    "debug-build": "babel src --out-dir dist --copy-files --source-maps inline",
+    "serve": "node dist/server.js",
+    "migrate": "sequelize db:migrate",
+    "seed-prod": "babel-node ./node_modules/.bin/sequelize db:seed:all --seeders-path src/dal/seeders/production",
+    "seed-dev": "babel-node ./node_modules/.bin/sequelize db:seed:all --seeders-path src/dal/seeders/development"
+  },
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  }
+}
