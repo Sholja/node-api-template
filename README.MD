@@ -79,11 +79,11 @@ Basic API template written in Node.JS
 
 2. "route.js" - Also required file. Here we describe our route. This class need to have two getters: "httpMethod" (here we say route type, is it "POST", "GET", "DELETE" etc.) and "path" (route path, for example "/auth/login"). Beside these two, route.js has one more important getter and that is "authLevel". This one is not required and if not specifed, by default it will be "USER_LOGIN". Now what this getter does? It's a simple middlware to determin route authorization, which user can access to the route. There are few levels of authorization:
 
-1. "NO_SESSION" - Pretty much as name says, for this route there is no session/authorization. This is used for open routes like for example login, registration, reset passsword etc.
-2. "USER_LOGIN" - This is used for routes which will be accessible for regular users via client app. So, only users with role "USER" can access this route.
-3. "MANAGER_LOGIN" - Another role in the system. With this auth level, routes can be accessed only by users with "MANAGER" role.
-4. "ADMIN" - Yet another role in the system and only users with role "ADMIN" can access this route.
-5. "BY_ROLES" - This auth level is used if we want to grant access to multiple user types to one route. For this auth, you don't have to specify it like this in code, you just write array of auths, for example:
+    1. "NO_SESSION" - Pretty much as name says, for this route there is no session/authorization. This is used for open routes like for example login, registration, reset passsword etc.
+    2. "USER_LOGIN" - This is used for routes which will be accessible for regular users via client app. So, only users with role "USER" can access this route.
+    3. "MANAGER_LOGIN" - Another role in the system. With this auth level, routes can be accessed only by users with "MANAGER" role.
+    4. "ADMIN" - Yet another role in the system and only users with role "ADMIN" can access this route.
+    5. "BY_ROLES" - This auth level is used if we want to grant access to multiple user types to one route. For this auth, you don't have to specify it like this in code, you just write array of auths, for example:
 
 ```
 <!-- So, to this route, users with role "USER" and "MANAGER" will have access -->
