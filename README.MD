@@ -159,40 +159,25 @@ class Validator {
 export default new Validator();
 ```
 
-- There is one more thing to add and our route will be done. That is response schema. Although optional, EVERY ROUTE SHOULD HAVE RESPONSE SCHEMA! What we gain by this it's pretty much like testing, we validate what our route is returning. So, we add it to "src/lib/validator/response-validator" folder and also we have to set getter in "src/lib/validator/index.js" if it's not already set. Example of one validator:
+5. "schema-response.js" - this a is response schema. Although optional, EVERY ROUTE SHOULD HAVE RESPONSE SCHEMA! What we gain by this it's pretty much like testing, we validate what our route is returning. Example of one validator:
 
 ```
 <!-- So, as we see, for example in login validator, we can say what types of fields route is returning
 
 as well as what fields are required and route should return -->
-
-class AuthValidator {
-	constructor() {
-		this.initialize();
-	}
-
-	get login() {
-		return this._login;
-	}
-
-	initialize() {
-		this._login = {
-			type: `object`,
-			properties: {
-				user_id: { type: [`integer`] },
-				email: { type: [`string`] },
-				first_name: { type: [`string`] },
-				last_name: { type: [`string`] }
-			},
-			required: [
-				`user_id`,
-				`email`
-			]
-		};
-	}
-}  
-
-export default AuthValidator;
+export const LOGIN = {
+	type: `object`,
+	properties: {
+		user_id: { type: [`integer`] },
+		email: { type: [`string`] },
+		first_name: { type: [`string`] },
+		last_name: { type: [`string`] }
+	},
+	required: [
+		`user_id`,
+		`email`
+	]
+};
 ```
 
 - Now that we have addded our response validator, we use it like this in a controller:
@@ -200,7 +185,7 @@ export default AuthValidator;
 ```
 <!-- We use "validate" method from validator class and pass our validator as well as data to validate -->
 
-return Response.format(data, validator.validate(validator.auth.login, userData));
+return Response.format(data, validator.validate(LOGIN, userData));
 ```
 
 
