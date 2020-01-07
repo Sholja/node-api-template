@@ -1,4 +1,4 @@
-import Sequelize from "sequelize";
+import Sequelize from 'sequelize';
 import constants from 'config/constants';
 
 class Role extends Sequelize.Model {
@@ -18,6 +18,14 @@ class Role extends Sequelize.Model {
             created_at: constants.sequelize.DATA_TYPES.TIMESTAMP,
             updated_at: constants.sequelize.DATA_TYPES.TIMESTAMP
         }, { sequelize });
+    }
+
+    static associate(models) {
+        this.belongsToMany(models.User, {
+            through: constants.sequelize.TABLES.USER_ROLES,
+            as: constants.sequelize.ALIASES.USERS,
+            foreignKey: constants.sequelize.PRIMARY_KEYS.ROLES
+        });
     }
 }
 

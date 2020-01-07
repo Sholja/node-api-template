@@ -47,6 +47,14 @@ class User extends Sequelize.Model {
             sequelize
         });
     }
+
+    static associate(models) {
+        this.belongsToMany(models.Role, {
+            through: constants.sequelize.TABLES.USER_ROLES,
+            as: constants.sequelize.ALIASES.ROLES,
+            foreignKey: constants.sequelize.PRIMARY_KEYS.USERS
+        });
+    }
 }
 
 export default User;

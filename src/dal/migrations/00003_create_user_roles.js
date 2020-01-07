@@ -2,10 +2,16 @@ const constants = require(`../../config/sequelize-constants`);
 
 module.exports = {
     up: (queryInterface, Sequelize) => queryInterface.createTable(constants.TABLES.USER_ROLES, {
+        user_roles_id: {
+            field: constants.PRIMARY_KEYS.USER_ROLES,
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true
+        },
         user_id: {
             type: Sequelize.INTEGER,
             onDelete: `CASCADE`,
-            primaryKey: true,
             allowNull: false,
             references: {
                 model: constants.TABLES.USERS,
@@ -14,7 +20,6 @@ module.exports = {
         },
         role_id: {
             type: Sequelize.INTEGER,
-            primaryKey: true,
             allowNull: false,
             references: {
                 model: constants.TABLES.ROLES,

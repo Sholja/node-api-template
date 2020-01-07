@@ -159,7 +159,7 @@ class Validator {
 export default new Validator();
 ```
 
-5. "schema-response.js" - this a is response schema. Although optional, EVERY ROUTE SHOULD HAVE RESPONSE SCHEMA! What we gain by this it's pretty much like testing, we validate what our route is returning. Example of one validator:
+5. "schema-response.js" - this is a response schema. Although optional, EVERY ROUTE SHOULD HAVE RESPONSE SCHEMA! What we gain by this it's pretty much like testing, we validate what our route is returning. Example of one validator:
 
 ```
 <!-- So, as we see, for example in login validator, we can say what types of fields route is returning
@@ -187,6 +187,36 @@ export const LOGIN = {
 
 return Response.format(data, validator.validate(LOGIN, userData));
 ```
+
+## Environment file
+
+There should be a environment file in the root folder of the project. File name should be ".env" and variables should be in this form:
+
+```
+# APPLICATION
+PORT=3000
+IS_DEVELOPMENT=true
+DEFAULT_LANGUAGE=en
+
+#DB LOCAL
+DB_HOST=localhost
+DB_USERNAME=username
+DB_PASSWORD=password
+DB_DATABASE=db_name
+DB_LOGGING=true
+DB_PORT=3306
+DB_CONNECTION=mysql
+```
+
+
+## Prettier and ESLint
+
+Install Visual Studio Code extensions:
+
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+Should you want to impose specific Visual Studio Code editor configuration, you can do that in [settings.json](https://github.com/SwipeStoxGmbH/naga-card/tree/master/.vscode/settings.json)
 
 
 ## Authors and contributors
