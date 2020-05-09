@@ -55,7 +55,8 @@
     "serve": "node dist/server.js",
     "migrate": "sequelize db:migrate",
     "seed-prod": "babel-node ./node_modules/.bin/sequelize db:seed:all --seeders-path src/dal/seeders/production",
-    "seed-dev": "babel-node ./node_modules/.bin/sequelize db:seed:all --seeders-path src/dal/seeders/development"
+    "seed-dev": "babel-node ./node_modules/.bin/sequelize db:seed:all --seeders-path src/dal/seeders/development",
+    "generate": "node generator.js"
   },
   "nyc": {
     "require": [
