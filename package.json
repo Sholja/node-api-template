@@ -19,7 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "klaw-sync": "^6.0.0",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.27.0",
     "mysql-import": "^4.0.24",
     "mysql2": "^2.1.0",
     "passport-jwt": "^4.0.0",
