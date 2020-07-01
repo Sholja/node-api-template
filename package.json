@@ -20,7 +20,7 @@
     "klaw-sync": "^6.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.27.0",
-    "mysql-import": "^3.0.6",
+    "mysql-import": "^4.0.24",
     "mysql2": "^2.1.0",
     "passport-jwt": "^4.0.0",
     "passport-restify": "^1.0.1",
@@ -33,7 +33,7 @@
     "sequelize-cli": "^5.5.1",
     "sha1": "^1.1.1",
     "util": "^0.12.1",
-    "winston": "^3.2.1"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "eslint": "^7.0.0",
@@ -42,7 +42,7 @@
     "eslint-plugin-chai-expect": "^2.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.0.1",
     "nodemon": "^2.0.3",
     "prettier": "^1.19.1"
