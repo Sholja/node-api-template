@@ -45,7 +45,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.0.1",
     "nodemon": "^2.0.3",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.5"
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec babel-node src/index.js",
