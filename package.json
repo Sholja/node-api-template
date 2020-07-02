@@ -9,7 +9,7 @@
     "@babel/node": "^7.7.7",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/polyfill": "^7.7.0",
-    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-env": "^7.10.4",
     "@babel/runtime": "^7.7.7",
     "ajv": "^6.10.2",
     "app-module-path": "^2.2.0",
