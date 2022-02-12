@@ -11,7 +11,7 @@
     "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.7",
     "@babel/runtime": "^7.7.7",
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "app-module-path": "^2.2.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
