@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "klaw-sync": "^6.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.27.0",
